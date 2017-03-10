@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cube_ptr="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="xlinkhttp.xlink.cn.xlinkhttp.viewmodel.MainViewModel" />
+
+        <variable
+            name="adapter"
+            type="android.support.v7.widget.RecyclerView.Adapter" />
+
+        <variable
+            name="layoutManager"
+            type="android.support.v7.widget.RecyclerView.LayoutManager" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@{mainViewModel.text}" />
+
+        <xlinkhttp.xlink.cn.xlinkhttp.view.refreshrecyclerview.RefreshRecyclerView
+            android:id="@+id/refresh_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:adapter="@{adapter}"
+            app:layoutManager="@{layoutManager}"
+            app:refresh_listener="@{mainViewModel.refreshListenerAdapter}">
+
+        </xlinkhttp.xlink.cn.xlinkhttp.view.refreshrecyclerview.RefreshRecyclerView>
+
+    </LinearLayout>
+
+</layout>
